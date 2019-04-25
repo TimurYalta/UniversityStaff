@@ -2,7 +2,7 @@ import { API_BASE_URL, AUTHORIZATION } from '../constants/Constants';
 var HttpStatus = require('http-status-codes');
 const SECOND = 1000;
 
-export const getUserData = (id) => {
+export const getUserData = (id, token) => {
     let url = API_BASE_URL + '/users/';
     if(id) {
         url += id;
@@ -11,7 +11,8 @@ export const getUserData = (id) => {
     }
     return fetch(url,
         {
-            method: 'GET'
+            method: 'GET',
+            headers:{"Authorization":token}
         }
     )
     .then((response) => {

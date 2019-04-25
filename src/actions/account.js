@@ -8,8 +8,9 @@ import {
 import * as account from '../services/account';
 
 export const getUser = (id) => {
-    return (dispatch, getState) => {
-        account.getUserData(id)
+    return (dispatch, getState) => {const token = getState().application.token;
+        
+        account.getUserData(id, token)
             .then((data) => {
                 if (id) {
                     dispatch({

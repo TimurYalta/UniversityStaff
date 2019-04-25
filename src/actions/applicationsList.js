@@ -9,7 +9,7 @@ export const getApplications = (status, candidate) => {
     return(dispatch, getState) => {
         const token = getState().application.token;
         //TODO add token
-        applicationsList.getApplications(status, candidate)
+        applicationsList.getApplications(status, candidate, token)
             .then((res) => {
                 dispatch({
                     type: GET_APPLICATIONS,
@@ -26,7 +26,7 @@ export const getApplication = (id) => {
     return(dispatch, getState) => {
         const token = getState().application.token;
         //TODO add token
-        applicationsList.getApplication(id)
+        applicationsList.getApplication(id, token)
             .then((res) => {
                 dispatch({
                     type: GET_APPLICATION,

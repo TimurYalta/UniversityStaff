@@ -9,7 +9,7 @@ export const updateApplication = (status) => {
         const token = getState().application.token;
         const id = getState().candidateApplication.id;
         //TODO add token
-        application.updateApplicationStatus(status, id)
+        application.updateApplicationStatus(status, id, token)
             .then(() => {
                 dispatch({
                     type: MODIFY_APPLICATION
