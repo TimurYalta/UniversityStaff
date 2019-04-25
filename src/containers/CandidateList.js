@@ -61,36 +61,12 @@ class CandidateList extends React.Component {
                                 <input type="text" value={this.state.candidate} onChange={this.changeSearchQuery}/>
                             </label>
                         </div>
-                        <div>
-                            <label>
-                                {`Filter by status:`}
-                                <select value={this.state.status} onChange={this.changeFilter}>
-                                    <option value={undefined} >
-                                        {`None`}
-                                    </option>
-                                    <option value="accepted">
-                                        {`accepted`}
-                                    </option>
-                                    <option value="rejected">
-                                        {"rejected"}
-                                    </option>
-                                    <option value="review">
-                                        {"review"}
-                                    </option>
-                                    <option value="interview">
-                                        {"interview"}
-                                    </option>
-                                    <option value="initial">
-                                        {"initial"}
-                                    </option>
-                                </select>
-                            </label>
-                        </div>
+
                         <button 
                             enabled={this.state.candidate||this.state.status} 
                             onClick={this.applySearchAndFilter}    
                         > 
-                            {`Apply filter and search`}
+                            {`Apply search`}
                         </button>
                     </div>
                     {this.props.candidateList.map(

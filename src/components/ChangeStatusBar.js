@@ -131,21 +131,13 @@ class ChangeStatusBar extends React.Component { // eslint-disable-line react/pre
                         value={this.state.type}
                         onChange={this.handleStatusChange}
                     >
-                        <option value={`initial`}>
-                            {`initial`}
-                        </option>
                         <option value={`rejected`}>
                             {`rejected`}
                         </option>
                         <option value={`accepted`}>
                             {`accepted`}
                         </option>
-                        <option value={`review`}>
-                            {`review`}
-                        </option>
-                        <option value={`interview`}>
-                            {`interview`}
-                        </option>
+
                     </select>
                 </label>
                 {this.renderParams()}

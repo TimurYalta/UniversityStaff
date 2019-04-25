@@ -19,7 +19,6 @@ class UserPage extends React.Component { // eslint-disable-line react/prefer-sta
     componentDidMount() {
         if (!this.state.updated) {
             this.props.actions.getUser();
-            this.props.actions.getUsers();
             this.state = {
                 updated: true
             };
@@ -40,18 +39,6 @@ class UserPage extends React.Component { // eslint-disable-line react/prefer-sta
                     <div>{`Email: ${this.props.email}`}</div>
                     
                     <button onClick={this.props.logout}>{"Logout"}</button>
-                    <div style={{ border: "1px solid black" }}>
-                        {'Users: '}
-                        {this.props.users.map((e) => {
-                            return <div style={{ border: "1px solid gray", display: 'flex', justifyContent: 'space-between' }}>
-                                <div>{`Name: ${e.name}`}</div>
-                                <div>{`Role: ${e.role}`}</div>
-                                <div>{`Email: ${e.email}`}</div>
-                            </div>;
-                        })
-                        }
-
-                    </div>
                 </div>
             </div>
         );
@@ -64,7 +51,6 @@ function mapStateToProps(state) {
         name: state.account.me.name,
         email: state.account.me.email,
         role: state.account.me.role,
-        users: state.account.users
 
     };
 }

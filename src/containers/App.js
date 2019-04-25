@@ -16,7 +16,7 @@ class App extends Component {
     const { actions } = this.props;
     return (
       <div className="main-app-container">
-        <div className="main-app-nav">Managers application</div>
+        <div className="main-app-nav">UI Staff application</div>
         <div>
           <PrivateRouter/>
         </div>
