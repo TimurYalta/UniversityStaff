@@ -36,7 +36,7 @@ class Candidate extends React.Component { // eslint-disable-line react/prefer-st
                     d.getSeconds()].join(':');
             return <div>
                 <div>{`Date: ${dateString}`}</div>
-                <div>{`Interviewer id: ${status.interviewer}`}</div>
+
             </div>;
         }
         else if (type =='accepted'){
